@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180228204854) do
+ActiveRecord::Schema.define(version: 20180228204955) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -26,6 +26,20 @@ ActiveRecord::Schema.define(version: 20180228204854) do
     t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
   end
 
+  create_table "active_admin_managed_resources", force: :cascade do |t|
+    t.string "class_name", null: false
+    t.string "action", null: false
+    t.string "name"
+    t.index ["class_name", "action", "name"], name: "active_admin_managed_resources_index", unique: true
+  end
+
+  create_table "active_admin_permissions", force: :cascade do |t|
+    t.integer "managed_resource_id", null: false
+    t.integer "role", limit: 1, default: 0, null: false
+    t.integer "state", limit: 1, default: 0, null: false
+    t.index ["managed_resource_id", "role"], name: "active_admin_permissions_index", unique: true
+  end
+
   create_table "admin_users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -39,6 +53,7 @@ ActiveRecord::Schema.define(version: 20180228204854) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "role", limit: 1, default: 0, null: false
     t.index ["email"], name: "index_admin_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
