@@ -1,4 +1,5 @@
 ActiveAdmin.register AdminUser do
+  role_changeable
   permit_params :email, :password, :password_confirmation
 
   index do
