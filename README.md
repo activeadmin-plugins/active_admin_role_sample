@@ -1,24 +1,28 @@
-# README
+# Sample application for ActiveAdminRole
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Setup
 
-Things you may want to cover:
+```
+$ bin/setup
+$ bin/rails s
+```
 
-* Ruby version
+## Step
 
-* System dependencies
+1. Open `http://localhost:3000/admin`
 
-* Configuration
+    ![image](https://user-images.githubusercontent.com/15371677/36813095-b68dcd4e-1d16-11e8-8608-fd4c61835b75.png)
 
-* Database creation
+    Login with email: `admin@example.com`, password: `password`
 
-* Database initialization
+2. Click `Permissions`
 
-* How to run the test suite
+    ![image](https://user-images.githubusercontent.com/15371677/36813174-0caf6174-1d17-11e8-98d5-41e4925b490a.png)
 
-* Services (job queues, cache servers, search engines, etc.)
+3. Click `Reload`
 
-* Deployment instructions
+    ![image](https://user-images.githubusercontent.com/15371677/36813227-385ed80e-1d17-11e8-8030-a9e5e942dd29.png)
 
-* ...
+4. Then you can edit all permissions.
+
+    ![image](https://user-images.githubusercontent.com/15371677/36813272-62d683b6-1d17-11e8-8c43-5a7b4a567c3b.png)
