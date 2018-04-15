@@ -7,6 +7,15 @@ $ bin/setup
 $ bin/rails s
 ```
 
+or
+
+```
+$ docker build -t active_admin_role:latest .
+$ docker run --rm -v $PWD:/active_admin_role -p 3000:3000 -it active_admin_role:latest bash
+# bin/setup
+# bin/rails s -b 0.0.0.0 -p 3000
+```
+
 ## Step
 
 1. Open `http://localhost:3000/admin`
