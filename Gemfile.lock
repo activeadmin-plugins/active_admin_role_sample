@@ -24,7 +24,7 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.0.3)
-    active_admin_role (0.2.0)
+    active_admin_role (0.2.1)
       activeadmin (>= 1.2.0)
       cancancan (>= 1.15.0)
       railties (>= 5.0.0)
